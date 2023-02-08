@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+  x:Class="App1.MainPage"
+  xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+  <ScrollView>
+    <VerticalStackLayout
+      Padding="30,0"
+      Spacing="25"
+      VerticalOptions="Center">
+
+      <ImageButton
+        x:Name="btn_zoom_out"
+        Clicked="OnCounterClicked1"
+        HeightRequest="100"
+        HorizontalOptions="Center"
+        Source="dotnet_bot.png"
+        WidthRequest="100" />
+
+      <Slider
+        x:Name="scale_slider"
+        BackgroundColor="{OnPlatform WinUI=LightGray,
+                                     Android=LightGray,
+                                     MacCatalyst=Gray,
+                                     iOS=Gray}"
+        HeightRequest="36"
+        IsVisible="{OnPlatform WinUI=true,
+                               MacCatalyst=true,
+                               iOS=false,
+                               Android=false}"
+        Maximum="{OnPlatform WinUI=600,
+                             MacCatalyst=600,
+                             iOS=200,
+                             Android=200}"
+        Minimum="{OnPlatform WinUI=10,
+                             MacCatalyst=10,
+                             iOS=60,
+                             Android=60}"
+        MinimumTrackColor="Coral"
+        ThumbColor="BlanchedAlmond"
+        ValueChanged="OnSliderValueChanged"
+        WidthRequest="300"
+        Value="100" />
+
+      <ImageButton
+        x:Name="btn_zoom_in"
+        Clicked="OnCounterClicked2"
+        HeightRequest="100"
+        HorizontalOptions="Center"
+        Source="dotnet_bot.png"
+        WidthRequest="100" />
+
+    </VerticalStackLayout>
+  </ScrollView>
+
+</ContentPage>
